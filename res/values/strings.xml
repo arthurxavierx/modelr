@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Modelr</string>
+  <string name="gridSizePrompt">Grid Size</string>
+  <string-array name="gridSizeArray">
+    <item>16</item>
+    <item>32</item>
+    <item>64</item>
+    <item>128</item>
+  </string-array>
+
+  <string name="smoothStepsPrompt">Smooth Steps</string>
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="#FF828F99"
+  >
+  <com.xavier.modelr.DrawingView
+    android:id="@+id/drawingView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    />
+  
+  <GridLayout android:id="@+id/gridLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:rowCount="2"
+    android:columnCount="3"
+    android:horizontalSpacing="10dp"
+    android:gravity="center"
+    android:stretchMode="columnWidth"
+    android:useDefaultMargins="true"
+    android:layout_below="@id/drawingView"
+    android:layout_alignParentLeft="true">
+
+    <ImageButton android:id="@+id/frontButton"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/add"
+      android:onClick="addImage" />
+    <ImageButton android:id="@+id/topButton"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/add"
+      android:onClick="addImage" />
+    <ImageButton android:id="@+id/rightButton"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/add"
+      android:onClick="addImage" />
+
+    <TextView android:text="Front"
+      android:textSize="14dip" />
+    <TextView android:text="Top"
+      android:textSize="14dip" />
+    <TextView android:text="Right"
+      android:textSize="14dip" />
+  </GridLayout>
+
+  <Button android:id="@+id/generateButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/gridLayout"
+    android:layout_alignParentLeft="true"
+    android:onClick="onClick"
+    android:text="Generate" />
+  <Button android:id="@+id/dogButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/gridLayout"
+    android:layout_toRightOf="@id/generateButton"
+    android:onClick="onClick"
+    android:text="Dog" />
+  <Button android:id="@+id/clearButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/gridLayout"
+    android:layout_toRightOf="@id/dogButton"
+    android:onClick="onClick"
+    android:text="Clear" />
+
+  <Spinner
+    android:id="@+id/gridSizeSpinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/generateButton"
+    android:layout_alignParentLeft="true"
+    android:entries="@array/gridSizeArray"
+    android:prompt="@string/gridSizePrompt"
+    />
+
+  <NumberPicker
+    android:id="@+id/smoothStepsNumberPicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/drawingView"
+    android:layout_toRightOf="@id/clearButton"
+    android:prompt="@string/smoothStepsPrompt"
+    />
+</RelativeLayout>
